@@ -20,11 +20,11 @@ Widget defaultChipWithSilentDownload({
 
   if (UpdatStatus.readyToInstall == status) {
     return Tooltip(
-      message: 'Click to Install',
+      message: '点击安装',
       child: ElevatedButton.icon(
         onPressed: launchInstaller,
         icon: const Icon(Icons.check_circle),
-        label: const Text('Update Ready to install'),
+        label: const Text('等待安装更新'),
       ),
     );
   }

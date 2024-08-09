@@ -16,18 +16,18 @@ Widget defaultChipWithCheckFor({
   if (UpdatStatus.available == status ||
       UpdatStatus.availableWithChangelog == status) {
     return Tooltip(
-      message: 'Update to version ${latestVersion!.toString()}',
+      message: '升级到版本v${latestVersion!.toString()}',
       child: ElevatedButton.icon(
         onPressed: openDialog,
         icon: const Icon(Icons.system_update_alt_rounded),
-        label: const Text('Update available'),
+        label: const Text('更新已就绪'),
       ),
     );
   }
 
   if (UpdatStatus.downloading == status) {
     return Tooltip(
-      message: 'Please Wait...',
+      message: '请等待...',
       child: ElevatedButton.icon(
         onPressed: () {},
         icon: const SizedBox(
@@ -37,58 +37,58 @@ Widget defaultChipWithCheckFor({
             strokeWidth: 2,
           ),
         ),
-        label: const Text('Downloading...'),
+        label: const Text('下载中...'),
       ),
     );
   }
 
   if (UpdatStatus.readyToInstall == status) {
     return Tooltip(
-      message: 'Click to Install',
+      message: '点击安装',
       child: ElevatedButton.icon(
         onPressed: launchInstaller,
         icon: const Icon(Icons.check_circle),
-        label: const Text('Ready to install'),
+        label: const Text('等待安装'),
       ),
     );
   }
 
   if (UpdatStatus.error == status) {
     return Tooltip(
-      message: 'There was an issue with the update. Please try again.',
+      message: '升级时遇到了一些问题. 请再次尝试.',
       child: ElevatedButton.icon(
         onPressed: startUpdate,
         icon: const Icon(Icons.warning),
-        label: const Text('Error. Try Again.'),
+        label: const Text('错误. 重试.'),
       ),
     );
   }
 
   if (UpdatStatus.idle == status) {
     return Tooltip(
-      message: 'Click to check for updates',
+      message: '点击检查更新',
       child: ElevatedButton.icon(
         onPressed: checkForUpdate,
         icon: const Icon(Icons.refresh_rounded),
-        label: const Text('Check for Updates'),
+        label: const Text('检查更新'),
       ),
     );
   }
 
   if (UpdatStatus.upToDate == status) {
     return Tooltip(
-      message: 'Click to check for updates',
+      message: '点击检查更新',
       child: ElevatedButton.icon(
         onPressed: checkForUpdate,
         icon: const Icon(Icons.check_circle),
-        label: const Text('Up to date'),
+        label: const Text('已是最新版'),
       ),
     );
   }
 
   if (UpdatStatus.checking == status) {
     return Tooltip(
-      message: 'Please Wait...',
+      message: '请等待...',
       child: ElevatedButton.icon(
         onPressed: () {},
         icon: const SizedBox(
@@ -98,7 +98,7 @@ Widget defaultChipWithCheckFor({
             strokeWidth: 2,
           ),
         ),
-        label: const Text('Checking for Updates...'),
+        label: const Text('正在检查更新...'),
       ),
     );
   }

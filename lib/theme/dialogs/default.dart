@@ -23,20 +23,19 @@ void defaultDialog({
             Theme.of(context).useMaterial3 ? Axis.vertical : Axis.horizontal,
         children: const [
           Icon(Icons.update),
-          Text('Update available'),
+          Text('发现新版本'),
         ],
       ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('A new version of the app is available.'),
           const SizedBox(width: 10),
-          Text('New Version: ${latestVersion!.toString()}'),
+          Text('版本号: v${latestVersion!.toString()}'),
           const SizedBox(height: 10),
           if (status == UpdatStatus.availableWithChangelog) ...[
             Text(
-              'Changelog:',
+              '更新内容:',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -50,7 +49,7 @@ void defaultDialog({
       ),
       actions: <Widget>[
         TextButton(
-          child: const Text('Later'),
+          child: const Text('以后再说'),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -60,7 +59,7 @@ void defaultDialog({
             Navigator.pop(context);
             startUpdate();
           },
-          child: const Text('Update Now'),
+          child: const Text('立即更新'),
         ),
       ],
     ),
